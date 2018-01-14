@@ -9,12 +9,12 @@ class Operations {
     }
   }
 
-  private def computeInner(numb: Int, list: List[Int]): List[Int] = {
-    for {lst <- list if lst == numb} yield list
-    numb match {
+  private def computeInner(number: Int, list: List[Int]): List[Int] = {
+    for {lst <- list if lst == number} yield list
+    number match {
       case 1 => list
-      case n if n % 2 == 0 => computeInner(numb / 2, numb :: list)
-      case _ => computeInner((3 * numb + 1) / 2, numb :: list)
+      case num if num % 2 == 0 => computeInner(number / 2, number :: list)
+      case _ => computeInner((3 * number + 1) / 2, number :: list)
     }
   }
 }
